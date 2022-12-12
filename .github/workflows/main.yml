@@ -1,8 +1,8 @@
 name: Get ESPN Data
 
-on:
-  schedule:
-    - cron: '18 1 * * *'
+on: push
+  # schedule:
+  #   - cron: '18 1 * * *'
 
 jobs:
   build:
@@ -10,12 +10,12 @@ jobs:
 
     steps:
       - name: Checkout Repo Content
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.10.5'
+          python-version: '3.x'
 
       - name: Install Python Dependencies
         run: |
