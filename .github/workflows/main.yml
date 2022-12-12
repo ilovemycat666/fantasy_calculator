@@ -2,7 +2,7 @@ name: Get ESPN Data
 
 on:
   schedule:
-    - cron: '48 12 * * *'
+    - cron: '55 12 * * *'
 
 jobs:
   build:
