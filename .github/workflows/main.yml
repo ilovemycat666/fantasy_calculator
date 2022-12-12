@@ -23,7 +23,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Scrape ESPN
-        run: python ..\..\backend\env\helpers\espn_getter.py
+        run: python backend/env/helpers/espn_getter.py
 
       - name: Commit Files
         run: |
