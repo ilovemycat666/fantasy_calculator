@@ -2,7 +2,7 @@ name: Get ESPN Data
 
 on:
   schedule:
-    - cron: '55 12 * * *'
+    - cron: '18 1 * * *'
 
 jobs:
   build:
@@ -24,3 +24,16 @@ jobs:
 
       - name: Scrape ESPN
         run: python backend\env\helpers\espn_getter.py
+
+      - name: Commit Files
+        run: |
+          git config --local user.email "edwinreik@gmail.com"
+          git config --local user.name "ilovemycat666"
+          git add -A
+          git commit -m "Adds ESPN Data" -a 
+
+      - name: Push Changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: "oYpiGzj*@*GnkRk_N9t@"
+          branch: main
