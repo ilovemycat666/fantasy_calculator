@@ -1,13 +1,15 @@
-from flask import Flask, request
+import time
+import json 
 from csv import reader
 from itertools import combinations
 from operator import itemgetter
+
 from helpers.get_espn import get_espn
 from helpers.make_roster import make_roster, parse_injuries, short_roster_by_value
 from helpers.picks import picks
 from helpers.quick_combinations import quick_combinations
-import json 
-import time
+
+from flask import Flask, request
 
 """
 Use python virtual env to run 
@@ -19,15 +21,15 @@ For mac/unix users:
 
 to start:
 cd to env
-> run flask
+> flask run
 
 To close: 
 > deactivate
 """
 
-api = Flask(__name__)
+app = Flask(__name__)
 
-@api.route('/createTeams', methods = ['POST'])
+@app.route('/createTeams', methods = ['POST'])
 def my_profile():
     start = time.time()
     one = set(['ed', 'cate'])
