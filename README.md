@@ -17,6 +17,15 @@ mkvirtualenv fantasy_calulator
 pip install -r requirements.txt
 ```
 
+## Mac / Windows Proxy 
+Change the proxy at this path flask_react/package.json per OS
+```
+-- windows
+"proxy": "http://localhost:5000",
+-- mac
+"proxy": "http://127.0.0.1:5000",
+```
+
 ## Running the app
 ```
 [tab 1: backend/env]
